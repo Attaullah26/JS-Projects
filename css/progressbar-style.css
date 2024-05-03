@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #313131;
+    color: rgb(220, 245, 252);
+}
+
+.container {
+    border: 2px solid pink;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.container h1 {
+    padding: .6rem;
+    font-size: 2.3rem;
+}
+
+.container .progessBar {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 50px;
+    height: 30px;
+    background: white;
+    position: relative;
+}
+
+.container .progessBar .progress {
+    width: 0%;
+    border-radius: 50px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(-40deg, rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255), rgb(98, 202, 253), rgb(0, 8, 255));
+}
+.animate-progressBar {
+    animation: animate 3s linear forwards;
+
+}
+@keyframes animate {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+button {
+    padding: 10px 50px;
+    border: none;
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    border-radius: 6px;
+    background-color: blue;
+    margin: 1rem;
+    transition: all .2s linear;
+}
+button:hover {
+    background-color: rgb(2, 2, 206);
+}
