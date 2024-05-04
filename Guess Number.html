@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Number Game</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            background-color: #212121;
+            width: 100%;
+            height: 100vh;
+            color: white;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .wraper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #403f40;
+            padding: 42px;
+            border-radius: 5px;
+            border: 4px solid red;
+        }
+
+        h2 {
+            margin-bottom: 12px;
+            color: rgb(11, 11, 11);
+            font-size: 2.3rem;
+            background-color: yellowgreen;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        h1 {
+            margin: 25px 0 8px;
+            /* color: rgb(25, 250, 77); */
+            color: rgb(25, 252, 25);
+            text-align: center;
+        }
+
+        input[type="text"] {
+            width: 60px;
+            height: 60px;
+            /* padding: 5px 11px; */
+            background-color: #0a0a0a;
+            border-radius: 50px;
+            color: rgb(255, 255, 255);
+            font-size: 1.3rem;
+            outline: none;
+            text-align: center;
+            border: 2px solid white;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #btn {
+            padding: 8px 25px;
+            border: 1px solid white;
+            margin: 10px 50px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            background-color: red;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+
+        }
+
+        .guesses {
+            margin: 12px;
+        }
+
+        .low-hi {
+            text-align: center;
+            margin: 8px;
+            font-size: 1.6rem;
+            color: rgb(155, 154, 157);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wraper">
+            <h2>Number Guess Game</h2>
+            <p>Try and guess a random number between 1 and 100</p>
+            <p>You have 10 attempts to guess the right number</p>
+            <form action="">
+                <h1 class="title">Guess a Number</h1>
+                <input type="text" id="guess-field" placeholder="0">
+                <input type="button" id="btn" value="Submit Guess">
+            </form>
+            <div class="result-wrap">
+                <p>Previous Guesses : <span class="guesses"></span></p>
+                <p></p>Remaining Tries : <span class="remain-guesses">10</span></p>
+                <p class="low-hi"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Javascript -->
+    <script>
+
+        let randomNumber = parseInt(Math.random() * 100 + 1)
+        const guessField = document.querySelector('#guess-field')
+        const submit = document.querySelector('#btn')
+        const resultBox = document.querySelector('.result-wrap')
+        const guesses = document.querySelector('.guesses')
+        const remainingGuesses = document.querySelector('.remain-guesses')
+        const lowheigh = document.querySelector('.low-hi')
+        const title = document.querySelector('.title')
+        // console.log(`Random No:`, randomNumber);
+
+        const p = document.createElement('p')
+
+        let playGame = true
+
+        if (playGame) {
+            submit.addEventListener('click', function (e) {
+                e.preventDefault()
+
+                let guess = guessField.value
+                guess = Number.parseInt(guess)
+                // console.log(typeof guess);
+                // console.log(guess);
+                validate(guess)
+            })
+        }
+
+        let validate = function (guess) {
+            if (guess < 1) {
+                alert('Please enter number greater than 0')
+            } else if (guess > 100) {
+                alert('Please enter Number less than 100')
+            } else if (isNaN(guess)) {
+                alert('Please enter valid Number')
+            } else {
+                displayGuess(guess)
+            }
+        }
+
+        let remain_guesses = 10
+        let displayGuess = function (guess) {
+            guesses.innerHTML += guess + ", "
+            remain_guesses -= 1
+            remainingGuesses.innerHTML = remain_guesses
+            guessField.value = ''
+            if (remain_guesses < 1) {
+                alert('Game Over')
+                endGame()
+            }
+            chechGuess(guess)
+        }
+
+        let chechGuess = function (guess) {
+            if (guess === randomNumber) {
+                alert('Congratulations! you won.')
+                endGame()
+            }
+            if (guess > randomNumber) {
+                lowheigh.innerHTML = 'Your Guess is Higher'
+            } else {
+                lowheigh.innerHTML = 'Your Guess is Smaller'
+            }
+        }
+
+        let endGame = function () {
+            guessField.setAttribute('disabled', 'disabled');
+            playGame = false
+            p.innerHTML = '<button style="padding: 12px">Start New Game</button>'
+            resultBox.appendChild(p)
+            p.style.padding = '12px'
+            title.innerHTML = 'Correct Number Was: ' + randomNumber
+            lowheigh.innerHTML = `Random Number Was ${randomNumber}`
+            p.addEventListener('click',function(){
+                startNew()
+            })
+        }
+
+        let startNew = function(){
+            guessField.removeAttribute('disabled')
+            guesses.innerHTML = ''
+            remain_guesses.innerHTML = 10
+            resultBox.removeChild(p)
+            lowheigh.innerHTML = ''
+            title.innerHTML = ''
+
+            playGame = true
+        }
+    </script>
+</body>
+
+</html>
