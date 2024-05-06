@@ -40,6 +40,8 @@ loginButton.addEventListener('click', (e) => {
     } else {
         showSuccess()
     }
+    username.value = ""
+    password.value = ""
 })
 
 closeSuccess.addEventListener('click', () => {
