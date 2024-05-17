@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #323232;
+    background: linear-gradient(40deg, black, rgb(63, 1, 28), black);
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container .login {
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    align-items: center;
+    transition: all .5s;
+    border: 2px solid rgb(13, 238, 5);
+}
+
+
+.container .login input {
+    padding: 4px 12px;
+    border-radius: 3px;
+    margin: 8px 0;
+    outline: none;
+}
+
+.container .login label {
+    margin-top: 5px;
+    position: relative;
+}
+
+.container .login .username,
+.container .login .password {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .login .icon {
+    display: flex;
+    justify-content: center;
+}
+
+.container .login .icon i {
+    font-size: 3rem;
+    text-align: center;
+    border: 1px solid white;
+    padding: 10px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    color: #19ff2c;
+}
+
+.container .login .login-btn {
+    margin-top: 1rem;
+    width: 80px;
+    padding: 12px 40px;
+    padding: 5px;
+    font-size: 1.6rem;
+    background: transparent;
+    color: white;
+    border: none;
+    box-shadow: 1px 1px 5px rgb(86, 86, 86);
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.container .login .login-btn:hover {
+    box-shadow: 5px 5px 10px rgb(4, 240, 24);
+
+
+}

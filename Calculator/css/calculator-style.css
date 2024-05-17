@@ -1,0 +1,64 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #313131;
+    color: white;
+}
+.container {
+    margin: 0 auto;
+    text-align: center;
+}
+.container .cal-wrap {
+    width: 100%;
+    max-width: 310px;
+    min-height: 440px;
+    margin: 2rem auto;
+    border: 1px solid yellow;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 12px;
+    background-color: #282828;
+}
+.container .cal-wrap .input-box {
+    margin: 5px 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: gray;
+}
+.container .cal-wrap input {
+    width: 90%;
+    height: 40px;
+    padding: 12px ;
+    font-size: 2rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    text-align: right;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    margin: 1rem;
+    margin-bottom: 1rem;
+    background-color: black;
+    color: white;
+}
+.container .cal-wrap button {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    /* border-radius: 5px; */
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #212121;
+    color: white;
+    cursor: pointer;
+    transition: all .2s;
+}
+.container .cal-wrap button:hover {
+    background-color: #191919;
+}
+

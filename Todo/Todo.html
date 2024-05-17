@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="css/todo.-style.css">
+    <!-- ************* Font Awesome Icons CDN *************** -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ***************** Google Fonts CDN ****************-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lobster&family=Montserrat:wght@100;200;400;500;700;800&family=Ubuntu:ital,wght@0,300;0,400;0,700;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <i class="fa-solid fa-bars menu"></i>
+        <div class="todo-wrap">
+            <h1>Just Do it!</h1>
+            <div class="input-wrap">
+                <input type="text" placeholder='Add a task.' id="input-field">
+                <button class="task-btn" id="add-btn">I got this!</button>
+            </div>
+            <div class="date-time">20/24/2024 7:12pm</div>
+            <ul class="task-wrap">
+                <li class="task">
+                    <p class="task-desc">This is just demo</p>
+                    <div class="icons">
+                        <i class="fa-solid fa-circle-check" id="check"></i>
+                        <i class="fa-solid fa-trash" id="delete"></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="js/todo-script.js"></script>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="wraper">
+            <div class="display">
+                <textarea name="display" id="display" disabled></textarea>
+            </div>
+            <div id="keys">
+                <input type="button" class="button" value="q" name="q">
+                <input type="button" class="button" value="w" name="w">
+                <input type="button" class="button" value="e" name="e">
+                <input type="button" class="button" value="r" name="r">
+                <input type="button" class="button" value="t" name="t">
+                <input type="button" class="button" value="y" name="y">
+                <input type="button" class="button" value="u" name="u">
+                <input type="button" class="button" value="i" name="i">
+                <input type="button" class="button" value="o" name="o">
+                <input type="button" class="button" value="p" name="p">
+            </div>
+            <div id="keys">
+                <input type="button" class="button" value="a" name="a">
+                <input type="button" class="button" value="s" name="s">
+                <input type="button" class="button" value="d" name="d">
+                <input type="button" class="button" value="f" name="f">
+                <input type="button" class="button" value="g" name="g">
+                <input type="button" class="button" value="h" name="h">
+                <input type="button" class="button" value="j" name="j">
+                <input type="button" class="button" value="k" name="k">
+                <input type="button" class="button" value="l" name="l">
+            </div>
+            <div id="keys">
+                <input type="button" class="button" value="z" name="z">
+                <input type="button" class="button" value="x" name="x">
+                <input type="button" class="button" value="c" name="c">
+                <input type="button" class="button" value="v" name="v">
+                <input type="button" class="button" value="b" name="b">
+                <input type="button" class="button" value="n" name="n">
+                <input type="button" class="button" value="m" name="m">
+                <input type="button" id="clear" value="Clear" name="Clear">
+            </div>
+            <div id="keys">
+                <input type="button" value="Space" id="space">
+            </div>
+        </div>
+    </div>
+    <script>
+        let buttons = document.querySelectorAll(".button")
+        let display = document.querySelector("#display")
+        let space = document.querySelector("#space")
+        let clear = document.querySelector("#clear")
+
+        buttons.forEach((button) => {
+            button.addEventListener('click', (e) => {
+                let button_value = e.target.value
+                display.value += button_value
+            })
+        })
+        space.addEventListener('click', () => {
+            display.value += " "
+        })
+        clear.addEventListener('click', () => {
+            display.value = display.value.slice(0, -1)
+            console.log('clear clicked');
+        })
+
+        document.addEventListener('keypress', (e) => {
+            let key = String.fromCharCode(e.charCode)
+            display.value += key
+        })
+
+        document.addEventListener('keypress', (e) => {
+            if (e.key === "Backspace") {
+                e.preventDefault()
+                display.value.slice(0, -1)
+            }
+            console.log(e.which);
+        })
+
+
+    </script>
+</body>
+
+</html>

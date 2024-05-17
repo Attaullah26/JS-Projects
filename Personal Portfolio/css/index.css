@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+.container {
+    background-color: #1B1B32;
+    width: 100vw;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+.container #sidebar {
+    background-color: #0A0A23;
+    width: 19vw;
+    height: 100vh;
+    /* display: none; */
+}
+.container #sidebar ul li {
+    list-style: none;
+}
+.container #sidebar ul li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin: 2rem 0;
+    font-size: 18px;
+    color: white;
+    padding-left: 2.5rem;
+    padding-bottom: 10px;
+    transition: all .4s;
+    border-bottom: 1px solid #0A0A23;    
+}
+.container #sidebar ul li a:hover {
+    border-bottom: 1px solid rgb(141, 141, 141);    
+
+}
+.container #main {
+    width: 70vw;
+    height: 60vh;
+    margin: auto;
+    color: white;
+    margin-top: 6rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 1rem;
+}
+.container #main .image img {
+    height: 60vh;
+    /* width: 20vw; */
+    border-radius: 12px;
+}
+.container #main .dev {
+    padding: 1rem;
+}
+.container #main .dev .title {
+    font-size: 1.8rem;
+}
+.container #main .dev h1 {
+    font-size: 3.5rem;
+    font-family: "Poppins", sans-serif;
+    color: rgb(72, 255, 0);
+}
+.container #main .dev .buttons button {
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin-top: 8px;
+    font-weight: 600;
+    transition: all .2s;
+}
+.container #main .dev .buttons .contact:hover {
+    background-color: #0A0A23;
+   color: white;
+}
+.container #main .dev .buttons .cv {
+    background-color: #0A0A23;
+   color: white;
+   border: 2px solid white;
+}
+.container #main .dev .buttons .cv:hover {
+    background-color: white;
+   color: #0A0A23;
+   border: 2px solid white;
+}
+.container #main .dev p {
+    font-size: 11px;
+    margin: 8px 0;
+    text-align: justify;
+}

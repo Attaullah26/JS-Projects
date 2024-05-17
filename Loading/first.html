@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading 01</title>
+    <style>
+        body {
+            background-color: #323232;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .loader {
+            width: 70px;
+            height: 70px;
+            border: 8px solid  #434343;
+            border-radius: 50%;
+            border-right-color: blue;
+            border-right-style: dotted;
+            animation: circle 1s ease infinite;
+        }
+        @keyframes circle {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+</body>
+</html>
