@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Time</title>
+
+    <!-- **************** Styleing Here ****************** -->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        textarea {
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+            border: 2px solid;
+            margin-bottom: 1rem;
+            resize: none;
+            padding: 1rem;
+            font-size: 2rem;
+        }
+
+        button {
+            padding: 1rem 3rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- **************** HTML Content ****************** -->
+    <textarea name="text" id="text_box"></textarea>
+    <button>Speak</button>
+
+
+    <!-- **************** JAVASCRIPT ****************** -->
+    <script>
+        let text_box = document.querySelector('#text_box')
+        let button = document.querySelector('button')
+
+        button.addEventListener('click', () => {
+            let speech = new SpeechSynthesisUtterance(text_box.value)
+            speechSynthesis.speak(speech)
+        })
+    </script>
+</body>
+
+</html>

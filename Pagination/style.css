@@ -1,0 +1,63 @@
+/* =========== Google Font ========= */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #323232;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Montserrat", sans-serif;
+}
+body, .container, .links, .link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px black;
+}
+button {
+    padding: 7px;
+    width: 30px;  
+    cursor: pointer;  
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    margin: 0 2px;
+    border: 1px solid gray;
+}
+button i {
+    pointer-events: none;
+}
+.link {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: 5px;
+    width: 30px;  
+    cursor: pointer;  
+    border-radius: 5px;
+    margin: 0 2px;
+    border: 1px solid rgb(111, 111, 111);
+}
+button:hover, .link:hover {
+    background-color: blue;
+    color: white;
+}
+.active {
+    background-color: blue;
+    color: white;
+}
+button:disabled {
+    color: gray;
+    pointer-events: none;
+}

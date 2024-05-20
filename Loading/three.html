@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading 03</title>
+    <style>
+        body {
+            background-color: #323232;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .loader {
+            width: 100%;
+            max-width: 150px;
+            height: 25px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+        }
+        .loader .ball {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+        }
+        .loader .upper {
+            background-color: blue;
+            animation: upper 1.06s ease infinite;
+        }
+        @keyframes upper {
+            50% {
+                transform: translateY(-25px);
+            }
+        }
+        .loader .lower {
+            background-color: red;
+            animation: lower 1.04s ease infinite;
+            
+        }
+        @keyframes lower {
+            50% {
+                transform: translateY(-25px);
+            }
+        }
+        .loader .left {
+            background-color: yellow;
+            animation: left 1.02s ease infinite;
+        }
+        @keyframes left {
+            50% {
+                transform: translateY(-25px);
+            }
+        }
+        .loader .right {
+            background-color: green;
+            animation: right 1s ease infinite;
+        }
+        @keyframes right {
+            50% {
+                transform: translateY(-25px);
+            }
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div class="upper ball"></div>
+        <div class="lower ball"></div>
+        <div class="left ball"></div>
+        <div class="right ball"></div>
+    </div>
+</body>
+</html>

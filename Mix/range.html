@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .number {
+            display: block;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <input type="range" value="0"><br>
+    <div class="number">0</div> 
+    <script>
+        let input = document.querySelector('input')
+        let number = document.querySelector('.number')
+       input.addEventListener('input', ()=>{
+        number.textContent = input.value
+       })
+    </script>
+</body>
+</html>

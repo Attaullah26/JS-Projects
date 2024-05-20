@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Time</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif    ;
+            font-size: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+    <script>
+        let current_time = () => {
+            let box = document.querySelector('h1')
+            let date = new Date()
+            let hours = date.getHours()
+            let minutes = date.getMinutes()
+            let seconds = date.getSeconds()
+
+            // Make 12 hours time 
+            let day;
+            day = hours < 12 ? 'AM': 'PM'
+            hours == 0 ? (hours * 12) : hours
+
+            // Add 0 if value is less than 10 
+            hours = hours < 10 ? `0${hours}`: hours
+            minutes = minutes < 10 ? `0${minutes}`: minutes
+            seconds = seconds < 10 ? `0${seconds}`: seconds
+
+                box.innerHTML = `${hours}:${minutes}:${seconds}`
+
+        }
+        setInterval(() => {
+                current_time()
+            }, 1000);
+
+    </script>
+</body>
+
+</html>

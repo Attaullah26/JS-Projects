@@ -65,7 +65,19 @@
     font-size: 3.5rem;
     font-family: "Poppins", sans-serif;
     color: rgb(72, 255, 0);
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(130deg, red, green, yellow);
+    background-size: 400%;
+    font-weight: 900;
+    -webkit-background-clip: text;
+    animation: a 10s linear infinite;
 }
+@keyframes a {
+    100% {
+        background-position: 400%;
+    }
+}
+
 .container #main .dev .buttons button {
     padding: 10px 15px;
     border-radius: 4px;

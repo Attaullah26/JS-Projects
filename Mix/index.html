@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Color</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <input type="color" name="" id="">
+    <script>
+        let input = document.querySelector('input')
+        input.oninput = ()=>{
+            document.body.style.backgroundColor = input.value
+            // console.log(input.value);
+        }
+    </script>
+</body>
+</html>

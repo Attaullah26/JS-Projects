@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading 02</title>
+    <style>
+        body {
+            background-color: #323232;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .loader {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            /* background-color: red; */
+            position: relative;
+        }
+        .loader .ball {
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            border-radius: 50%;
+        }
+        .loader .upper {
+            top: -25px;
+            left: 0;
+            background-color: yellow;
+            animation: upper 2s ease infinite;
+        }
+        @keyframes upper {
+            50% {
+                top: 0px;
+            }
+        }
+        .loader .lower {
+            bottom: -25px;
+            left: 0;
+            background-color: cyan;
+            animation: lower 2s ease infinite;
+
+        }
+        @keyframes lower {
+            50% {
+                bottom: 0px;
+            }
+        }
+        .loader .left {
+            left: -25px;
+            top: 0;
+            background-color: red;
+            animation: left 2s ease infinite;
+        }
+        @keyframes left {
+            50% {
+                left: 0px;
+            }
+        }
+        .loader .right {
+            right: -25px;
+            background-color: blue;
+            animation: right 2s ease infinite;
+        }
+        @keyframes right {
+            50% {
+                right: 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div class="upper ball"></div>
+        <div class="lower ball"></div>
+        <div class="left ball"></div>
+        <div class="right ball"></div>
+    </div>
+</body>
+</html>
