@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(143, 121, 121);
+    color: white;
+}
+.container {
+    width: 100%;
+    max-width: 1250px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    padding: 2rem 1rem;
+    position: relative;
+    background-color: white;
+    min-height: 100vh;
+}
+.container .note {
+    width: 320px;
+    height: 350px;
+    border-radius: 8px;
+    margin: 1rem ; 
+    margin-top: 3rem; 
+    padding-bottom: 1rem;
+    /* box-shadow: 1px 3px 5px black; */
+}   
+.container .note .head {
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: right;
+    color: rgb(233, 233, 233);
+    padding: 8px;
+    background-color: black;
+}
+.container .note .head i {
+    padding: 0 5px;
+    cursor: pointer;
+    transition: all .3s;
+}
+.container .note #note_area {
+    height: 320px;
+    width: 100%;
+    resize: none;
+    border: none;
+    outline: none;
+    border: 1px solid;
+    border-radius: 0 0 8px 8px; 
+    padding: 5px 12px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgba(242, 141, 168, 0.313);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+.container .note .head i:hover {
+    color: white;
+}
+.container .add_new {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 5px;
+    margin-top: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: black;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(213, 213, 213);
+    transition: all .3s;
+}
+.container .add_new:hover {
+    color: white;
+}
