@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Users List</h1>
+        <div class="content_box">
+            <div class="head">
+                <input type="text" placeholder="Enter You Task..." id="input_field">
+                <button id="add">Add User</button>
+            </div>
+            <table class="users_wrap" id="users_wrap">
+                <tr>
+                    <th>S.No</th>
+                    <th class="name">Name</th>
+                    <th>Actions</th>
+                </tr>
+                <tr id="user">
+                    <!-- <td>01</td>
+                    <td>Babar Khan</td>
+                    <td><button id="edit" class="edit">Edit</button><button id="delete">Delete</button></td> -->
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- ************8 Javascript ****************** -->
+    <script>
+        let add_button = document.querySelector('#add')
+        let input_field = document.querySelector('#input_field')
+        let users_wrap = document.querySelector('#users_wrap')
+        let edit_button = document.querySelector('.edit')
+        let delete_button = document.querySelector('.delete')
+        let serial = 1
+        let data = []
+        let edit_id = ''
+        let add_button_text = document.querySelector('#add').innerHTML
+
+        
+
+        let lsdata = localStorage.getItem('users')
+        if (lsdata != null) {
+            data = JSON.parse(lsdata)
+        }
+        displayUser()
+        add_button.addEventListener('click', (e) => {
+            let name = input_field.value
+            if(edit_id!=null){
+                data.splice(edit_id, 1,{ 'name': name } )
+                edit_id = null
+            }else {
+                data.push({ 'name': name })
+            }
+            input_field.value = null
+            
+            saveUser(data)
+            displayUser()
+            add_button.innerHTML = add_button_text
+        })
+
+        let saveUser = (data) => {
+            localStorage.setItem('users', JSON.stringify(data))
+            // console.log(data);
+        }
+
+        function displayUser() {
+            let status = ''
+            data.forEach((user, index) => {
+                status += `
+                <tr id="user">
+                    <td>${index + 1}</td>
+                    <td class="name">${user.name}</td>
+                    <td><button class="edit" id="${index}" onclick="editUser(${index})">Edit</button>
+                    <button id="index" class="delete" onclick="deleteUser(${index})">Delete</button></td>
+                </tr>
+                `;
+                users_wrap.innerHTML = status;
+            });
+        }
+
+        function editUser(id) {
+            edit_id = id
+            input_field.value = data[id].name
+            add_button.innerHTML = 'Save Changes'
+        }
+        
+        
+        function deleteUser(id) {
+            data.splice(id, 1)
+            saveUser(data)
+            displayUser()
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -15,7 +15,7 @@ input.addEventListener('keyup', (e) => {
     }
 })
 
-let addTodo = (item) => {
+let addTodo = (item = " ") => {
     let listItem = document.createElement('li')
     listItem.classList.add('task')
     listItem.innerHTML = `
@@ -26,11 +26,30 @@ let addTodo = (item) => {
     </div>
     `;
     taskWrap.appendChild(listItem);
+    // console.log(listItem);
 
     checTask(listItem)
     deleteItem(listItem)
-  
+    saveTask(listItem)
 }
+
+let taskData = []
+let saveTask = (task)=>{
+    let taskItem = task.querySelectorAll('.task-desc')
+    taskItem.forEach(task => {
+        taskData.push(task.innerHTML)
+        localStorage.setItem('Tasks', JSON.stringify(taskData))
+    });
+}
+
+(
+    function(){
+        const tasks = localStorage.getItem('Tasks')
+        JSON.parse(tasks).forEach((task)=>{
+            addTodo(task)
+        })
+    }
+)()
 
 function deleteItem(item) {
     item.querySelector('#delete').addEventListener('click', () => {
@@ -43,32 +62,3 @@ function checTask(item) {
         item.classList.toggle('done')
     })
 }
-
-
-
-
-
-
-
-
-
-
-
-// let p = document.createElement('p')
-//         p.classList.add('task-desc')
-//         li.appendChild(p)
-//         p.innerHTML = input.value
-
-//         let div = document.createElement('div')
-//         p.classList.add('icons')
-//         li.appendChild(div)
-
-//         let i = document.createElement('i')
-//         p.classList.add('fa-solid')
-//         p.id = 'check'
-//         div.appendChild(i)
-
-//         let span = document.createElement('span')
-//         p.classList.add('fa-solid')
-//         p.id = 'delete'
-//         div.appendChild(span)
