@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <!-- Custom Style file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <h1>Image Slider - Using Javascript</h1>
+    <div class="container">
+        <img src="https://picsum.photos/id/1/1000/500" alt="" class="slide">
+        <img src="https://picsum.photos/id/11/1000/500" alt="" class="slide">
+        <img src="https://picsum.photos/id/111/1000/500" alt="" class="slide">
+        <img src="https://picsum.photos/id/110/1000/500" alt="" class="slide">
+        <i class="fa-solid fa-forward" id="next" onclick="nextSlide()"></i>
+        <i class="fa-solid fa-backward" id="prev" onclick="prevSlide()"></i>    
+    </div>
+
+    <!-- Javascript file -->
+    <script src="script.js"></script>
+</body>
+</html>
